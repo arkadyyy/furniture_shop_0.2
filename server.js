@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./dbConnection");
 const Product = require("./models/ProductModel");
@@ -12,14 +11,16 @@ const socketIo = require("socket.io");
 var path = require("path");
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ credentials: true, origin: "http://localhost:3002" }));
+
 dotenv.config();
 
 const PREFIX = "/api";
-// app.use("/", express.static(path.join(__dirname, "/src")));
-// app.use("/", express.static(path.join(build)));
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use("/", express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 // app.get("/", (req, res) => {
 //   res.send("this works !");
