@@ -38,6 +38,9 @@ io.on("connection", (socket) => {
     console.log("Client disconnected");
   });
 });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.get(`${PREFIX}/products`, async (req, res) => {
   const products = await Product.find({});
