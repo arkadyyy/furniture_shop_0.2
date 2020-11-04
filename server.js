@@ -19,7 +19,7 @@ const PREFIX = "/api";
 // app.use("/", express.static(path.join(__dirname, "/src")));
 // app.use("/", express.static(path.join(build)));
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use("/", express.static(path.join(__dirname, "client/build")));
 
 connectDB();
 // Product.insertMany(products);
