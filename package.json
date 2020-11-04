@@ -1,7 +1,6 @@
 {
   "name": "furniture-shop-production",
   "version": "1.0.0",
-  "description": "",
   "main": "dbConnection.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -15,9 +14,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild" : "cd client && npm i && npm run build"
-    
+    "heroku-postbuild": "cd client && npm i && npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkadyyy/furniture_shop_0.2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arkadyyy/furniture_shop_0.2/issues"
+  },
+  "homepage": "https://github.com/arkadyyy/furniture_shop_0.2#readme",
+  "description": ""
 }

@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 dotenv.config();
 
 const PREFIX = "/api";
+const url = process.env.MONGO_URI || "mongodb://localhost:27017";
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 
